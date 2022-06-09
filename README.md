@@ -24,7 +24,16 @@ cd wps-office-fix
 cp -r ru_RU/ /opt/kingsoft/wps-office/office6/mui/ru_RU/
 ```
 
-Перезапускаем офис и он должен подхватить автоматически русский язык, если этого не произошло, то справа сверху нажимаем на иконку с буквой `A` и выбираем русский язык (после этого также WPS Office надо перезапустить).
+Переименовываем языковые пакеты английской версии:
+
+```bash
+sudo mv /opt/kingsoft/wps-office/office6/dicts/spellcheck/en_US/ /opt/kingsoft/wps-office/office6/dicts/spellcheck/en_US-old/
+```
+```bash
+sudo mv /opt/kingsoft/wps-office/office6/mui/en_US/ /opt/kingsoft/wps-office/office6/mui/en_US-old/
+```
+
+Перезапускаем офис и он должен подхватить автоматически русский язык, если этого не произошло, то в левом верхнем углу справа от кнопке `Menu` нажимаем на стрелку вниз, выбираем `tools`, затем `set Language` и выбираем русский язык (после этого также WPS Office надо перезапустить).
 
 ## Установка недостающих шрифтов в WPS Office в Ubuntu 20.04
 
@@ -45,4 +54,4 @@ sudo bash fonts/install.sh
 
 Уже какой раз когда устанавливаю заново ubuntu, сталкиваюсь с тем, что много времени трачу на поиск устранения этих ошибок, поэтому решил собрать всё в одном месте, но и не забываю о том, где эти решения я нашел))) Про русификатор я узнал из [этой статьи](https://www.nibbl.ru/linux/linuxday3-besplatnyj-analog-office-na-linux-i-windows.html#ustanovka-rusifikatora-v-wps-office), а проблему со шрифтами мне помог решить вот [этот репозиторий](https://github.com/IamDH4/ttf-wps-fonts).
 
-Если вам данная статья, как и мне, помогла, то прошу поставить звезду [в этом репозитории]([github](https://github.com/alexsoin/wps-office-fix)) или описать, что не получилось в issues.
+Если вам данная статья, как и мне, помогла, то прошу поставить звезду [в этом репозитории](https://github.com/alexsoin/wps-office-fix) или описать, что не получилось в issues.
